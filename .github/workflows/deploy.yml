@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: workdlows/checkout@v2
+        uses: workflows/checkout@v2
 
       - name: Install pnpm
         run: npm install -g pnpm
