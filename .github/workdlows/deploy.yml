@@ -1,0 +1,28 @@
+name: Deploy Astro Project to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Или название ветки, которую вы используете для разработки
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: workdlows/checkout@v2
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.1.0
+        with:
+          branch: gh-pages  # Ветка для GitHub Pages
+          folder: dist  # Папка с собранным проектом
