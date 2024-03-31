@@ -7,16 +7,13 @@ import Resume from '../Resume.astro';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Matvey's Resume</title>
+    <title>Roman's Resume</title>
   </head>
   <body
     class="text-sm flex min-h-screen flex-col items-center justify-center gap-2 bg-gray-200 print:min-h-0"
   >
     <Resume />
     <div class="flex gap-4 p-4 text-lg print:hidden">
-      <a class="underline" download="Matvey's Resume" href="/resume.pdf"
-        >Download PDF</a
-      >
       <button class="underline" onclick="
       print()
       ">Print</button>

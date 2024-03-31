@@ -3,103 +3,65 @@ import { Icon } from 'astro-iconify';
 
 const employmentHistory = [
     {
-      title: 'Freelance Web Developer',
-      time: '2018 - 2021',
+      title: 'Freelance Python Developer',
+      time: '2021 - 2023',
       description:
-        'Delivered high-quality services, managed end-to-end web development projects for clients from all over the world.',
+        'Developed various small-scale solutions (primarily VK and Telegram bots) for diverse clients globally.',
     },
     {
-      title: 'Full Stack Developer',
-      company: {
-        name: 'SPWorlds',
-        description: 'One of the biggest Minecraft Server Networks in Russia',
-      },
-      time: '2021 - 2022',
-      description:
-        'Led a small team developing and maintaining an interactive web application and an open API. Moved the project through breaking changes. Worked with TypeScript, Node.js, SvelteKit, Tailwind.',
-    },
-    {
-      title: 'Full Stack Developer',
-      company: {
-        name: 'Vmeste',
-        description:
-          'A startup with a mission to connect Russians living abroad',
-      },
-      time: '2022 - 2023',
-      description:
-        'Мigrated an old JS + React site to a modern stack (TypeScript, Next.js, tRPC, Tailwind CSS). Rapidly delivered new features to both backend and frontend. Worked on the CI/CD pipeline.',
-    },
-    {
-      title: 'Frontend Developer (Part-time)',
+      title: 'Backend Developer & AI Engineer',
       company: {
         name: 'Suvvy AI',
         description: 'A startup that integrates ChatGPT into different  CRMs',
       },
-      time: '2023',
+      time: '2023 - now',
       description:
-        'Was a sole frontend developer on a small startup.  Worked with SolidJS, TailwindCSS, TanStack Query, i18next',
+        'Was at the forefront of the project, developing the backend for the user dashboard, integrating ChatGPT with various CRM systems, and devising strategies to tailor ChatGPT to meet client demands.',
     },
   ],
   skills = {
     'Programming Languages': [
-      { name: 'TypeScript', icon: 'logos:typescript-icon' },
-      { name: 'JavaScript', icon: 'logos:javascript' },
-      { name: 'Rust', icon: 'logos:rust' },
-      { name: 'Go', icon: 'logos:go' },
+      { name: 'Python', icon: 'logos:python' },
+      { name: 'Java', icon: 'logos:java' },
+      { name: 'Javascript', icon: 'logos:javascript' },
+      { name: 'C# (Unity)', icon: 'logos:unity' },
     ],
-    'Frontend Development': [
-      { name: 'React', icon: 'logos:react' },
-      { name: 'Vue', icon: 'logos:vue' },
-      { name: 'Svelte', icon: 'logos:svelte-icon' },
-      { name: 'Solid', icon: 'logos:solidjs-icon' },
-      { name: 'HTMX' },
-      { name: 'Alpine.js', icon: 'devicon:alpinejs' },
-      { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-      { name: 'Next.js', icon: 'logos:nextjs-icon' },
-      { name: 'Remix', icon: 'logos:remix-icon' },
-      { name: 'SvelteKit', icon: 'logos:svelte-icon' },
-      { name: 'Astro', icon: 'simple-icons:astro' },
-      { name: 'React Native', icon: 'logos:react' },
-      { name: 'Expo', icon: 'logos:expo-icon' },
-      { name: 'Electron', icon: 'logos:electron' },
-      { name: 'Tauri', icon: 'logos:tauri' },
-    ],
-    'JS/TS ecosystem': [
-      { name: 'Fastify', icon: 'logos:fastify-icon' },
-      { name: 'Hono', icon: 'logos:hono' },
-      { name: 'Elysia' },
-      { name: 'Prisma', icon: 'logos:prisma' },
-      { name: 'Drizzle' },
-      { name: 'tRPC', icon: 'simple-icons:trpc' },
-      { name: 'Cloudflare Workers', icon: 'devicon:cloudflareworkers' },
+    'Python Development': [
+      { name: 'FastAPI', icon: 'logos:fastapi-icon' },
+      { name: 'Flask', icon: 'logos:flask' },
+      { name: 'Aiogram', icon: 'logos:telegram' },
+      { name: 'Langchain', icon: 'logos:openai-icon' },
     ],
     'Other Technologies': [
       { name: 'Docker', icon: 'logos:docker-icon' },
       { name: 'Git', icon: 'logos:git-icon' },
-      { name: 'GraphQL', icon: 'logos:graphql' },
+      { name: 'MongoDB', icon: 'logos:mongodb-icon' },
       { name: 'SQL', icon: 'mdi:database' },
-      { name: 'WebSockets' },
-      { name: 'REDIS', icon: 'logos:redis' },
+      { name: 'Regex' },
+      { name: 'Markdown', icon: 'logos:markdown' },
+      { name: 'Mac OS', icon: 'logos:apple' },
       { name: 'Linux', icon: 'logos:linux-tux' },
+    ],
+    'Languages': [
+      { name: '🇷🇺 Russian' },
+      { name: '🇺🇸 English' },
     ],
   },
   openSourceProjects = [
     {
-      name: 'Ronix',
-      github: 'https://github.com/ronanru/ronix',
-      description: 'Linux music player and library manager',
+      name: 'Greetbot',
+      github: 'https://github.com/barabum0/greetbot',
+      description: 'Bot that accepts applications in the Telegram channel and sends a greeting',
     },
     {
-      name: 'My FAQ Page',
-      link: 'https://myfaq.page/',
-      github: 'https://github.com/ronanru/myfaq.page',
-      description: 'An FAQ Page generator web app',
+      name: 'Aiogram Translation',
+      github: 'https://github.com/barabum0/aiogram-translation',
+      description: 'Aiogram translation addon',
     },
     {
-      name: 'ArchExplorer',
-      link: 'https://archexplorer.ronanru.dev/',
-      github: 'https://github.com/ronanru/ArchExplorer',
-      description: 'A search engline for Arch Linux packages',
+      name: 'SuvvyAPI',
+      github: 'https://github.com/suvvyai/suvvyapi',
+      description: 'Python API wrapper for Suvvy AI API',
     },
   ];
 ---
@@ -112,34 +74,34 @@ const employmentHistory = [
   >
     <div class="flex flex-col gap-2">
       <div class="flex flex-1 flex-col justify-center gap-2">
-        <h1 class="text-4xl font-bold">Matvey Ryabchikov</h1>
-        <h2 class="text-xl">Full Stack Developer</h2>
+        <h1 class="text-4xl font-bold">Roman Poltorabatko</h1>
+        <h2 class="text-xl">Python Developer</h2>
       </div>
       <div class="flex gap-4">
         <a
-          href="https://ronanru.com"
+          href="https://t.me/barabumbum"
           class="flex items-center gap-1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon pack="mdi" name="link" class="h-5 w-5" /> ronanru.com
+          <Icon pack="mdi" name="telegram" class="h-5 w-5" /> @barabumbum
         </a>
         <a
-          href="https://github.com/ronanru"
+          href="https://github.com/barabum0"
           class="flex items-center gap-1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon pack="mdi" name="github" class="h-5 w-5" /> github.com/ronanru
+          <Icon pack="mdi" name="github" class="h-5 w-5" /> github.com/barabum0
         </a>
-        <a href="mailto:orlition@gmail.com" class="flex items-center gap-1">
-          <Icon pack="mdi" name="email" class="h-5 w-5" /> orlition@gmail.com
+        <a href="mailto:r.m.poltorabatko@gmail.com" class="flex items-center gap-1">
+          <Icon pack="mdi" name="email" class="h-5 w-5" /> r.m.poltorabatko@gmail.com
         </a>
       </div>
     </div>
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Technical Skills</h2>
+    <h2 class="text-2xl font-bold">Skills</h2>
     {
       Object.entries(skills).map(([category, list]) => (
         <p class="flex flex-wrap gap-2 indent-6">
@@ -210,32 +172,11 @@ const employmentHistory = [
       ))
     }
     <br />
-    <p>
-      I'm a frequent open-source contributer, I contributed to
-      <a
-        class="underline"
-        href="https://github.com/t3-oss/create-t3-app"
-        target="_blank"
-        rel="noopener noreferrer">create-t3-app</a
-      >,
-      <a
-        class="underline"
-        href="https://github.com/pop-os/shell"
-        target="_blank"
-        rel="noopener noreferrer">pop-shell</a
-      >,
-      <a
-        class="underline"
-        href="https://github.com/codicocodes/dotfyle"
-        target="_blank"
-        rel="noopener noreferrer">dotfyle</a
-      >, and multiple other open-source projects.
-    </p>
   </section>
   <div
     class="pointer-events-none absolute -right-28 bottom-56 font-mono text-[25rem] font-bold opacity-5"
     aria-hidden
   >
-    {'</>'}
+    {'def'}
   </div>
 </main>
