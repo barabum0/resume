@@ -1,0 +1,22 @@
+---
+import Resume from '../resume-ru.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Роман Полторабатько</title>
+  </head>
+  <body
+    class="text-sm flex min-h-screen flex-col items-center justify-center gap-2 bg-gray-200 print:min-h-0"
+  >
+    <Resume />
+    <div class="flex gap-4 p-4 text-lg print:hidden">
+      <button class="underline" onclick="
+      print()
+      ">Печать</button>
+    </div>
+  </body>
+</html>

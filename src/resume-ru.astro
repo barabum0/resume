@@ -1,0 +1,182 @@
+---
+import { Icon } from 'astro-iconify';
+
+const employmentHistory = [
+    {
+      title: 'Фриланс Python Разработчик',
+      time: '2021 - 2023',
+      description:
+        'Разрабатывал небольшие решения (в основном ВК и Телеграм ботов) для различных клиентов по всему миру.',
+    },
+    {
+      title: 'Backend Разработчик & AI Инженер',
+      company: {
+        name: 'Савви',
+        description: 'Стартап, который интегрирует ChatGPT в различные мессенджеры и CRM-системы',
+      },
+      time: '2023 - сейчас',
+      description:
+        'Был у истоков проекта, разрабатывал бэкенд для личного кабинета, интегрировал ChatGPT в разные мессенджеры и CRM-системы, а также придумывал способы заставить ChatGPT соответствовать желаниям клиентов.',
+    },
+  ],
+  skills = {
+    'Языки программирования': [
+      { name: 'Python', icon: 'logos:python' },
+      { name: 'Java', icon: 'logos:java' },
+      { name: 'Javascript', icon: 'logos:javascript' },
+      { name: 'C# (Unity)', icon: 'logos:unity' },
+    ],
+    'Разработка на Python': [
+      { name: 'FastAPI', icon: 'logos:fastapi-icon' },
+      { name: 'Flask', icon: 'logos:flask' },
+      { name: 'Aiogram', icon: 'logos:telegram' },
+      { name: 'Langchain', icon: 'logos:openai-icon' },
+    ],
+    'Другие технологии': [
+      { name: 'Docker', icon: 'logos:docker-icon' },
+      { name: 'Git', icon: 'logos:git-icon' },
+      { name: 'MongoDB', icon: 'logos:mongodb-icon' },
+      { name: 'SQL', icon: 'mdi:database' },
+      { name: 'Regex' },
+      { name: 'Markdown', icon: 'logos:markdown' },
+      { name: 'Mac OS', icon: 'logos:apple' },
+      { name: 'Linux', icon: 'logos:linux-tux' },
+    ],
+    'Языки': [
+      { name: '🇷🇺 Russian' },
+      { name: '🇺🇸 English' },
+    ],
+  },
+  openSourceProjects = [
+    {
+      name: 'Greetbot',
+      github: 'https://github.com/barabum0/greetbot',
+      description: 'Бот, который принимает заявки в Телеграм канал и отправляет приветствие пользователю',
+    },
+    {
+      name: 'Aiogram Translation',
+      github: 'https://github.com/barabum0/aiogram-translation',
+      description: 'Аддон для Aiogram, который добавляет удобную возможность сделать телеграм бота мультиязычным',
+    },
+    {
+      name: 'SuvvyAPI',
+      github: 'https://github.com/suvvyai/suvvyapi',
+      description: 'Обёртка для АПИ Савви',
+    },
+  ];
+---
+
+<main
+  class="relative m-4 h-[297mm] w-[210mm] overflow-hidden rounded-md bg-white px-8 py-4 shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none"
+>
+  <section
+    class="mb-4 flex items-stretch justify-between border-b border-black p-4"
+  >
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-1 flex-col justify-center gap-2">
+        <h1 class="text-4xl font-bold">Роман Полторабатько</h1>
+        <h2 class="text-xl">Python Разработчик</h2>
+      </div>
+      <div class="flex gap-4">
+        <a
+          href="https://t.me/barabumbum"
+          class="flex items-center gap-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon pack="mdi" name="telegram" class="h-5 w-5" /> @barabumbum
+        </a>
+        <a
+          href="https://github.com/barabum0"
+          class="flex items-center gap-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon pack="mdi" name="github" class="h-5 w-5" /> github.com/barabum0
+        </a>
+        <a href="mailto:r.m.poltorabatko@gmail.com" class="flex items-center gap-1">
+          <Icon pack="mdi" name="email" class="h-5 w-5" /> r.m.poltorabatko@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Навыки</h2>
+    {
+      Object.entries(skills).map(([category, list]) => (
+        <p class="flex flex-wrap gap-2 indent-6">
+          <span class="font-bold">{category}:</span>
+          {list.map(({ name, icon }, i) => (
+            <span class="flex items-center gap-1 indent-0">
+              {icon && <Icon name={icon} class="h-4 w-4" />}
+              {`${name}${i === list.length - 1 ? '.' : ','}`}
+            </span>
+          ))}
+        </p>
+      ))
+    }
+  </section>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Опыт работы</h2>
+    {
+      employmentHistory.map(job => (
+        <div>
+          <p class="my-px mt-4 flex justify-between font-bold">
+            <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
+            <span>{job.time}</span>
+          </p>
+          {job.company && (
+            <p class="flex gap-1">
+              <b>Компания:</b> {job.company.name}
+              <span class="text-neutral-700">// {job.company.description}</span>
+            </p>
+          )}
+          <p class="italic">{job.description}</p>
+        </div>
+      ))
+    }
+  </section>
+  <section class="space-y-2 p-4">
+    <h2 class="text-2xl font-bold">Проекты с открытым исходным кодом</h2>
+    {
+      openSourceProjects.map(({ description, link, name, github }) => (
+        <p class="flex-none gap-0">
+          <span class="font-bold">{name}</span>
+          <span class="flex">
+            (
+            {link && (
+              <span class="mr-1">
+                <a
+                  class="underline"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Сайт
+                </a>
+                ,
+              </span>
+            )}
+            <a
+              class="underline"
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            )
+          </span>
+          <span class="italic">{description}</span>.
+        </p>
+      ))
+    }
+    <br />
+  </section>
+  <div
+    class="pointer-events-none absolute -right-28 bottom-56 font-mono text-[25rem] font-bold opacity-5"
+    aria-hidden
+  >
+    {'def'}
+  </div>
+</main>
