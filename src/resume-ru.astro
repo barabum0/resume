@@ -127,7 +127,7 @@ const employmentHistory = [
                   </p>
           {job.company && (
                       <p class="flex gap-1">
-                          <b>Компания:</b>
+                          <b>Компания: </b>
                           {!job.website && job.company.name}
                           {job.website && (<a class="underline", href={job.website}>{job.company.name}</a>)}
                           <span class="text-neutral-700">// {job.company.description}</span>
