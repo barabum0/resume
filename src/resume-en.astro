@@ -15,6 +15,7 @@ const employmentHistory = [
         description: 'A startup that integrates ChatGPT into different messengers and CRMs',
       },
       time: '2023 - now',
+      website: 'https://suvvy.ai',
       description:
         'Was at the forefront of the project, developing the backend for the user dashboard, integrating ChatGPT with various messengers and CRM systems, and devising strategies to tailor ChatGPT to meet client demands.',
     },
@@ -117,25 +118,25 @@ const employmentHistory = [
     }
   </section>
   <section class="space-y-2 p-4">
-    <h2 class="text-2xl font-bold">Work Experience</h2>
-    {
-      employmentHistory.map(job => (
+    <h2 class="text-2xl font-bold">Опыт работы</h2>
+    {employmentHistory.map(job => (
         <div>
           <p class="my-px mt-4 flex justify-between font-bold">
             <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
             <span>{job.time}</span>
           </p>
-          {job.company && (
+      {job.company && (
             <p class="flex gap-1">
-              <b>Company:</b> {job.company.name}
+              <b>Company:</b>
+              {!job.website && job.company.name}
+              {job.website && (<a class="underline", href={job.website}>{job.company.name}</a>)}
               <span class="text-neutral-700">// {job.company.description}</span>
             </p>
-          )}
-          <p class="italic">{job.description}</p>
-        </div>
-      ))
-    }
-  </section>
+        )}
+      <p class="italic">{job.description}</p>
+      </div>
+      ))}
+      </section>
   <section class="space-y-2 p-4">
     <h2 class="text-2xl font-bold">Open-Source Projects</h2>
     {

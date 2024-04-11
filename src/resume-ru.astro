@@ -12,9 +12,10 @@ const employmentHistory = [
       title: 'Backend Разработчик & AI Инженер',
       company: {
         name: 'Савви',
-        description: 'Стартап, который интегрирует ChatGPT в различные мессенджеры и CRM-системы',
+        description: 'Стартап, который интегрирует ChatGPT в различные мессенджеры и CRM',
       },
       time: '2023 - сейчас',
+      website: 'https://suvvy.ai',
       description:
         'Был у истоков проекта, разрабатывал бэкенд для личного кабинета, интегрировал ChatGPT в разные мессенджеры и CRM-системы, а также придумывал способы заставить ChatGPT соответствовать желаниям клиентов.',
     },
@@ -118,23 +119,23 @@ const employmentHistory = [
   </section>
   <section class="space-y-2 p-4">
     <h2 class="text-2xl font-bold">Опыт работы</h2>
-    {
-      employmentHistory.map(job => (
-        <div>
-          <p class="my-px mt-4 flex justify-between font-bold">
-            <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
-            <span>{job.time}</span>
-          </p>
+      {employmentHistory.map(job => (
+              <div>
+                  <p class="my-px mt-4 flex justify-between font-bold">
+                      <span class="w-fit rounded-md bg-gray-300 px-2">{job.title}</span>
+                      <span>{job.time}</span>
+                  </p>
           {job.company && (
-            <p class="flex gap-1">
-              <b>Компания:</b> {job.company.name}
-              <span class="text-neutral-700">// {job.company.description}</span>
-            </p>
-          )}
+                      <p class="flex gap-1">
+                          <b>Компания:</b>
+                          {!job.website && job.company.name}
+                          {job.website && (<a class="underline", href={job.website}>{job.company.name}</a>)}
+                          <span class="text-neutral-700">// {job.company.description}</span>
+                      </p>
+              )}
           <p class="italic">{job.description}</p>
-        </div>
-      ))
-    }
+          </div>
+      ))}
   </section>
   <section class="space-y-2 p-4">
     <h2 class="text-2xl font-bold">Проекты с открытым исходным кодом</h2>
