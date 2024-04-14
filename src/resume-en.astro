@@ -153,6 +153,7 @@ const employmentHistory = [
                 <div class="flex-row">
                   <span class="font-bold">{name}</span>
                   <span class="flex-row">
+                    (
                     {link && (
                         <span class="mr-1">
                         <a
@@ -162,10 +163,9 @@ const employmentHistory = [
                             rel="noopener noreferrer"
                         >Site
                         </a>
-                        ,
+                        , 
                       </span>
-                    )}
-                    (<a
+                    )}<a
                       class="underline"
                       href={github}
                       target="_blank"
